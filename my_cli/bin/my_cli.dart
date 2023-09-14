@@ -1,5 +1,19 @@
-import 'package:my_cli/my_cli.dart' as my_cli;
+class Task {
+  String? title;
+  String? description;
 
-void main(List<String> arguments) {
-  print('Hello world: ${my_cli.calculate()}!');
+  Task(this.title, this.description);
+}
+
+class taskMang {
+  List<Task> tasks = [];
+
+  void editTask(int index, Task updatedTask) {
+    if (index >= 0 && index < tasks.length) {
+      tasks[index] = updatedTask;
+      print('updated succesfully');
+    } else {
+      print('can not update');
+    }
+  }
 }
